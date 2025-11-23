@@ -1,0 +1,213 @@
+.card {
+  background-color: rgb(31 41 55);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+}
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .dashboardGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboardGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.dashboardCard {
+  background-color: rgb(31 41 55);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+}
+
+.dashboardCardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.dashboardCardDescription {
+  color: rgb(156 163 175);
+  margin-bottom: 1rem;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.listTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.emptyStateText {
+  color: rgb(156 163 175);
+  margin-bottom: 1rem;
+}
+
+.clientsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.clientCard {
+  border: 1px solid rgb(75 85 99);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.clientCard:hover {
+  background-color: rgb(55 65 81);
+}
+
+.clientName {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white;
+}
+
+.clientEmail {
+  color: rgb(156 163 175);
+}
+
+.clientType {
+  font-size: 0.875rem;
+  color: rgb(107 114 128);
+}
+
+/* Form Styles */
+.formContainer {
+  background-color: rgb(31 41 55);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.successMessage {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: rgb(220 252 231);
+  border: 1px solid rgb(34 197 94);
+  color: rgb(21 128 61);
+  border-radius: 0.5rem;
+}
+
+.errorMessage {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: rgb(254 226 226);
+  border: 1px solid rgb(239 68 68);
+  color: rgb(185 28 28);
+  border-radius: 0.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(209 213 219);
+  margin-bottom: 0.25rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid rgb(75 85 99);
+  border-radius: 0.375rem;
+  background-color: rgb(55 65 81);
+  color: white;
+}
+
+.button {
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.buttonPrimary {
+  background-color: rgb(37 99 235);
+  color: white;
+}
+
+.buttonPrimary:hover:not(:disabled) {
+  background-color: rgb(29 78 216);
+}
+
+.buttonSuccess {
+  background-color: rgb(22 163 74);
+  color: white;
+}
+
+.buttonSuccess:hover {
+  background-color: rgb(21 128 61);
+}
+
+.buttonPurple {
+  background-color: rgb(147 51 234);
+  color: white;
+}
+
+.buttonPurple:hover {
+  background-color: rgb(126 34 206);
+}
+
+.buttonDisabled {
+  background-color: rgb(96 165 250);
+  cursor: not-allowed;
+}
+
+.badge {
+  font-size: 0.75rem;
+  color: rgb(107 114 128);
+  margin-top: 0.5rem;
+}

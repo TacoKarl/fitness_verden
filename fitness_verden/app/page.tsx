@@ -23,6 +23,19 @@ export default function HomePage() {
       return;
     }
 
+    if (payload.Role === "Manager") {
+      router.push("/manager");
+      return;
+    }
+    if (payload.Role === "PersonalTrainer") {
+      router.push("/trainer");
+      return;
+    }
+    if (payload.Role === "Client") {
+      router.push("/client");
+      return;
+    }
+
     setUser(payload);
     setLoading(false);
   }, [router]);
@@ -61,7 +74,7 @@ export default function HomePage() {
             {user?.Role === "PersonalTrainer" && <p>Trainer Dashboard</p>}
             {user?.Role === "Client" && <p>Client Dashboard</p>}
             <p className="text-gray-600 dark:text-gray-400 mt-2">
-              Welcome back, {user?.Name}!
+              Welcome back, {user?.Name} :)
             </p>
           </div>
         </main>
