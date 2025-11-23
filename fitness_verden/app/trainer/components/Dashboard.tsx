@@ -34,12 +34,11 @@ export function Dashboard({ onNavigate }: DashboardProps) {
           Create and manage workout programs
         </p>
         <button
-          onClick={() => onNavigate("programs")}
+          onClick={() => onNavigate("workoutPrograms")}
           className={`${styles.button} ${styles.buttonPurple}`}
         >
           View Programs
         </button>
-        <p className={styles.badge}>🚧 Ready to build</p>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { useClients } from "../hooks/useClients";
-import styles from "./components.module.css";
+import { useClients } from "../../hooks/useClients";
+import styles from "../components.module.css";
 
 interface ClientsListProps {
   onCreateClick: () => void;

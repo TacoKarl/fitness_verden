@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { JwtPayload, parseJwt } from "@/app/lib/parseJwt";
 import { Dashboard } from "./components/Dashboard";
-import { ClientsList } from "./components/ClientsList";
-import { CreateClientForm } from "./components/CreateClientForm";
-import { WorkoutProgramsPlaceholder } from "./components/WorkoutProgramsPlaceholder";
+import { ClientsList } from "./components/clients/ClientsList";
+import { CreateClientForm } from "./components/clients/CreateClientForm";
 import styles from "./trainer.module.css";
+import { CreateWorkoutProgramForm } from "./components/workoutPrograms/CreateWorkoutProgramForm";
+import { WorkoutProgramsList } from "./components/workoutPrograms/WorkoutProgramsList";
 
 export default function TrainerPage() {
   const router = useRouter();
@@ -15,7 +16,11 @@ export default function TrainerPage() {
   const [user, setUser] = useState<JwtPayload | null>(null);
 
   const [activeTab, setActiveTab] = useState<
-    "dashboard" | "clients" | "createClient" | "programs"
+    | "dashboard"
+    | "clients"
+    | "createClient"
+    | "createWorkoutPrograms"
+    | "workoutPrograms"
   >("dashboard");
 
   useEffect(() => {
@@ -94,12 +99,24 @@ export default function TrainerPage() {
               Create Client
             </button>
             <button
-              onClick={() => setActiveTab("programs")}
+              onClick={() => setActiveTab("workoutPrograms")}
               className={`${styles.tab} ${
-                activeTab === "programs" ? styles.tabActive : styles.tabInactive
+                activeTab === "workoutPrograms"
+                  ? styles.tabActive
+                  : styles.tabInactive
               }`}
             >
-              Programs 🚧
+              Workout Programs
+            </button>
+            <button
+              onClick={() => setActiveTab("createWorkoutPrograms")}
+              className={`${styles.tab} ${
+                activeTab === "createWorkoutPrograms"
+                  ? styles.tabActive
+                  : styles.tabInactive
+              }`}
+            >
+              Create Program
             </button>
           </div>
 
@@ -112,7 +129,16 @@ export default function TrainerPage() {
           {activeTab === "createClient" && (
             <CreateClientForm onSuccess={() => setActiveTab("clients")} />
           )}
-          {activeTab === "programs" && <WorkoutProgramsPlaceholder />}
+          {activeTab === "createWorkoutPrograms" && (
+            <CreateWorkoutProgramForm
+              onSuccess={() => setActiveTab("workoutPrograms")}
+            />
+          )}
+          {activeTab === "workoutPrograms" && (
+            <WorkoutProgramsList
+              onCreateClick={() => setActiveTab("createWorkoutPrograms")}
+            />
+          )}
         </main>
       </div>
     </div>

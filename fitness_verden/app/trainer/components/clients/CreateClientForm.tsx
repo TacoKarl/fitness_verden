@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useClients } from "../hooks/useClients";
-import styles from "./components.module.css";
+import { useClients } from "../../hooks/useClients";
+import styles from "../components.module.css";
 
 interface CreateClientFormProps {
   onSuccess: () => void;
