@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useClients } from "../../hooks/useClients";
+import { useClients } from "@/app/api/hooks/useClients";
 import styles from "../components.module.css";
 
 interface CreateClientFormProps {

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import styles from "../components.module.css";
-import { useWorkoutPrograms } from "../../hooks/useWorkoutPrograms";
-import { useClients } from "../../hooks/useClients";
+import { useWorkoutPrograms } from "@/app/api/hooks/useWorkoutPrograms";
+import { useClients } from "@/app/api/hooks/useClients";
 
 interface ProgramListProps {
   onCreateClick: () => void;

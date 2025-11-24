@@ -9,6 +9,7 @@ import { CreateClientForm } from "./components/clients/CreateClientForm";
 import styles from "./trainer.module.css";
 import { CreateWorkoutProgramForm } from "./components/workoutPrograms/CreateWorkoutProgramForm";
 import { WorkoutProgramsList } from "./components/workoutPrograms/WorkoutProgramsList";
+import Logout from "@/app/login/logout";
 
 export default function TrainerPage() {
   const router = useRouter();
@@ -41,10 +42,6 @@ export default function TrainerPage() {
     setLoading(false);
   }, [router]);
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    router.push("/login");
-  };
 
   if (loading) {
     return (
@@ -56,11 +53,7 @@ export default function TrainerPage() {
 
   return (
     <div className={styles.pageContainer}>
-      <div>
-        <button onClick={handleLogout} className={styles.logoutButton}>
-          Logout
-        </button>
-      </div>
+        <Logout></Logout>
 
       <div className={styles.mainContent}>
         <main className={styles.contentWrapper}>

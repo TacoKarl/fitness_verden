@@ -1,13 +1,8 @@
 import { useState } from "react";
 import { parseJwt } from "@/app/lib/parseJwt";
+import {Exercise} from "@/app/api/hooks/useExercises";
 
-export interface Exercise {
-  name: string;
-  description: string;
-  sets: number;
-  repetitions: number;
-  time: string;
-}
+
 
 export interface WorkoutProgram {
   workoutProgramId: number;
