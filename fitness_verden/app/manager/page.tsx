@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { JwtPayload, parseJwt } from "@/app/lib/parseJwt";
 import { CreateTrainerForm } from "./components/CreateTrainerForm";
 import styles from "./manager.module.css";
+import Logout from "@/app/login/logout";
 
 export default function ManagerPage() {
   const router = useRouter();
@@ -29,11 +30,6 @@ export default function ManagerPage() {
     setLoading(false);
   }, [router]);
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    router.push("/login");
-  };
-
   if (loading) {
     return (
       <div className={styles.loadingContainer}>
@@ -47,11 +43,7 @@ export default function ManagerPage() {
 
   return (
     <div className={styles.pageContainer}>
-      <div>
-        <button onClick={handleLogout} className={styles.logoutButton}>
-          Logout
-        </button>
-      </div>
+        <Logout></Logout>
 
       <div className={styles.mainContent}>
         <main className={styles.contentWrapper}>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { useClients, Client } from "../../hooks/useClients";
-import { useWorkoutPrograms } from "../../hooks/useWorkoutPrograms";
+import { useClients, Client } from "@/app/api/hooks/useClients";
+import { useWorkoutPrograms } from "@/app/api/hooks/useWorkoutPrograms";
 import styles from "../components.module.css";
 
 interface CreateWorkoutProgramFormProps {

@@ -3,21 +3,6 @@
   background-color: rgb(0 0 0);
 }
 
-.logoutButton {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: rgb(220 38 38);
-  color: white;
-  border-radius: 0.5rem;
-  transition: background-color 0.2s;
-}
-
-.logoutButton:hover {
-  background-color: rgb(185 28 28);
-}
-
 .mainContent {
   display: flex;
   min-height: 100vh;
@@ -78,12 +63,6 @@
   background-color: rgb(209 213 219);
 }
 
-.loadingContainer {
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-}
 
 .loadingContainer {
   display: flex;
