@@ -16,7 +16,6 @@ export default function ProgramPage() {
     const [loading, setLoading] = useState(true);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [availableExercises, setAvailableExercises] = useState<Exercise[]>([]);
-    const [newExercise, setNewExercise] = useState<Exercise>("");
 
     const programId = params.id;
 
