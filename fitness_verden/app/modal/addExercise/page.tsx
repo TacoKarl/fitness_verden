@@ -1,4 +1,4 @@
-"user client";
+"use client";
 
 import {WorkoutProgram} from "@/app/api/hooks/useWorkoutPrograms";
 import {Exercise} from "@/app/api/hooks/useExercises";
