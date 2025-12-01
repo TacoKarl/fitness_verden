@@ -63,7 +63,7 @@ export default function ClientPage() {
                         {programs.map((program) => (
                             <li key={program.name}
                                 className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 text-center cursor-pointer transform transition-all duration-200 hover:scale-105 hover:shadow-xl"
-                                onClick={() => router.push(`/client/program/${program.workoutProgramId}`)}
+                                onClick={() => router.push(`/program/${program.workoutProgramId}`)}
                             >
                                 <strong
                                     className="text-2xl font-bold mb-2 text-gray-900 dark:text-white"

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import styles from "../components.module.css";
 import { useWorkoutPrograms } from "@/app/api/hooks/useWorkoutPrograms";
 import { useClients } from "@/app/api/hooks/useClients";
+import {useRouter} from "next/navigation";
 
 interface ProgramListProps {
   onCreateClick: () => void;
@@ -11,6 +12,7 @@ export function WorkoutProgramsList({ onCreateClick }: ProgramListProps) {
   const { programs, loading, error, fetchWorkoutPrograms } =
     useWorkoutPrograms();
   const { clients, fetchClients } = useClients();
+  const router = useRouter() ;
 
   useEffect(() => {
     fetchWorkoutPrograms();
@@ -52,7 +54,12 @@ export function WorkoutProgramsList({ onCreateClick }: ProgramListProps) {
             const client = clients.find((c) => c.userId === program.clientId);
 
             return (
-              <div key={program.workoutProgramId} className={styles.clientCard}>
+              <div
+                  key={program.workoutProgramId}
+                  className={styles.clientCard}
+                  onClick={ () => router.push(`/program/${program.workoutProgramId}`)}
+                  style={{ cursor : "pointer" }}
+              >
                 <h3 className={styles.clientName}>{program.name}</h3>
                 <p className={styles.clientEmail}>{program.description}</p>
                 <p className={styles.clientType}>
