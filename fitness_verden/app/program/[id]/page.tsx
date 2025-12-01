@@ -78,7 +78,7 @@ export default function ProgramPage() {
 
                 {isModalOpen && (
                     <AddExerciseModal
-                    programId={programId}
+                    programId={programId as string}
                     program={program}
                     availableExercises={availableExercises}
                     onClose={() => setIsModalOpen(false)}
